@@ -1,0 +1,11 @@
+default_trip = 'telegram'
+password_livechan = 'REDACTED'
+group_id = REDACTED
+group_id = REDACTED
+token = 'REDACTED'
+board = 'int'
+url = 'kotchan.fun'
+default_cooldown = 2
+poll_interval = 1
+mods = [REDACTED]
+mod_password = 'REDACTED'
