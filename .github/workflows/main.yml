@@ -1,7 +1,11 @@
-- name: Python Black
-  # You may pin to the exact commit or the version.
-  # uses: cytopia/docker-black@7d24b479648771a57062a58ed5fc9f08859cf02c
-  uses: cytopia/docker-black@0.10
-  with:
-    # Path to check (defaults to current directory)
-    path: # optional, default is ./
+name: black-action
+on: [push, pull_request]
+jobs:
+  linter_name:
+    name: runner / black formatter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: rickstaa/action-black@v1
+        with:
+          black_args: ". --check"
