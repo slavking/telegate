@@ -150,10 +150,11 @@ class TeleGate(object):
                                         data = await f.read()
                                         with open(path, 'wb') as f:
                                             f.write(data)
-                                        with open(path, 'rb') as f:
-                                            res2 = await group.send_photo(f)
-                                            if not res:
-                                                res = res2
+                            if os.path.exists(path):
+                                with open(path, 'rb') as f:
+                                    res2 = await group.send_photo(f)
+                                    if not res:
+                                        res = res2
                         if res:
                             self.ids[post_data['count']] = res['result']['message_id']
                             self.ids[res['result']['message_id']] = post_data['count']
